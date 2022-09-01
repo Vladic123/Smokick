@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.github.pocmo.sensordashboard">
+
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/splash"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:icon">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Splash"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Details"
+            android:exported="true"
+            />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".SensorReceiverService"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name="com.google.android.gms.wearable.BIND_LISTENER"
+                    tools:ignore="WearableBindListener" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Emblem"
+            android:exported="true" />
+        <activity android:name=".Calendar"
+            android:exported="true" />
+        <activity android:name=".CommuniActivity"
+            android:exported="true"/>
+        <activity android:name=".NewPostActivity"
+            android:exported="true"/>
+        <activity android:name=".PostDetailActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".VSmode"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
+        <activity
+            android:name=".MatchActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
+    </application>
+
+</manifest>
